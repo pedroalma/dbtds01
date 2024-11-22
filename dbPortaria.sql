@@ -126,4 +126,6 @@ select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from t
 
 select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from tbUsuarios as usu inner join tbFuncionarios as func on usu.codFunc =  func.codFunc where func.nome like "%l%";
 
-select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from tbUsuarios as usu inner join tbFuncionarios as func on usu.codFunc = func.codFunc where func.sexo like  = "M";
+select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from tbUsuarios as usu inner join tbFuncionarios as func on usu.codFunc = func.codFunc where func.nome not like "%l%";
+
+select func.nome,cli.nome,prod.descricao,vend.quantidade,vend.valor from tbVenda as vend inner join tbFuncionarios as func on func.codFunc = vend.codUsu inner join tbCliente as cli on vend.codCli = cli.codCli inner join tbProduto as prod on vend.codPro = prod.codPro;
