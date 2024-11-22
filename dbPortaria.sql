@@ -129,3 +129,9 @@ select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from t
 select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from tbUsuarios as usu inner join tbFuncionarios as func on usu.codFunc = func.codFunc where func.nome not like "%l%";
 
 select func.nome,cli.nome,prod.descricao,vend.quantidade,vend.valor from tbVenda as vend inner join tbFuncionarios as func on func.codFunc = vend.codUsu inner join tbCliente as cli on vend.codCli = cli.codCli inner join tbProduto as prod on vend.codPro = prod.codPro;
+
+--                                                                               nome do fornecedor ,lote do produto ,validade do produto ,
+--                                                                               email do fornecedor quantidade de produto ,
+--                                                                               cnpj do fornecedor ,preco do produto,
+--                                                                               a pergunta e para a tabela produto.
+select forn.nome , Pro.lote , Pro.validade , forn.email, Pro.quantidade ,forn.cnpj, Pro.preco  from tbProduto as Pro inner join tbFornecedores as forn on Pro.codPro = forn.codForn ;
