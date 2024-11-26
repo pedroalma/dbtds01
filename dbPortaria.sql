@@ -135,3 +135,8 @@ select func.nome,cli.nome,prod.descricao,vend.quantidade,vend.valor from tbVenda
 --                                                                               cnpj do fornecedor ,preco do produto,
 --                                                                               a pergunta e para a tabela produto.
 select forn.nome , Pro.lote , Pro.validade , forn.email, Pro.quantidade ,forn.cnpj, Pro.preco  from tbProduto as Pro inner join tbFornecedores as forn on Pro.codPro = forn.codForn ;
+
+
+ -- tbProduto(descricao,lote,validade,quantidade,preco\tbVenda(valor,quantidade\tbFornecedores(nome,email,telefone,cnpj
+select Pro.descricao as "Produto" ,Pro.lote as "numero do lote" , Pro.validade ,Pro.quantidade ,Pro.preco "Preço do produto",vend.valor as "Valor da venda ", vend.quantidade as "quantidade vendida" ,forn.nome as "Nome do Fornecedor",forn.email as "email do Fornecedor" ,forn.telefone as "telefone do Fornecedor",forn.cnpj as "cnpj do Fornecedor" from tbProduto as Pro inner join tbVenda as vend on pro.codPro = vend.codPro inner join tbFornecedores as forn on Pro.codForn = forn.codForn;
+
