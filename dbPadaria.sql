@@ -243,20 +243,38 @@ update tbProdutos set preco=1.50 where codProd=3;
 update tbProdutos set quantidade=1000 where codProd=5;
 update tbProdutos set validade="2027/11/11" where codprod=2;
 update tbProdutos set validade="2024/03/05" where codprod=4;
-select * from tbEstoques;
+
 
 update tbEstoques set lote= '256899' where lote= '145798';
 update tbEstoques set lote= '568613' where lote= '459612';
 update tbEstoques set horaEntr= '10:50:00' where horaEntr= '10:45:00';
 update tbEstoques set horaEntr= '13:30:00' where horaEntr= '12:30:00';
-update tbEstoques set quantidade= '            100' where quantidade= '20';
-select * from tbEstoques;
+update tbEstoques set quantidade= '100' where quantidade= '20';
 
 update tbPagamentos set forma_pagamento='Debito' where codpag=1;
 update tbPagamentos set forma_pagamento='Pix' where codpag=3;
 update tbPagamentos set forma_pagamento='Credito' where codpag=5;
 update tbPagamentos set forma_pagamento='VA/VR' where codpag=4;
 update tbPagamentos set forma_pagamento='Dinheiro' where codpag=2;
+
+update tbEstoques set lote= '256899' where lote= '145798';
+update tbEstoques set lote= '568613' where lote= '459612';
+update tbEstoques set horaEntr= '10:50:00' where horaEntr= '10:45:00';
+update tbEstoques set horaEntr= '13:30:00' where horaEntr= '12:30:00';
+update tbEstoques set quantidade= '100' where quantidade= '20';
+ 
+update tbVendas set valor_total=950.75  where valor_total= 1200.50;
+update tbVendas set valor_total=550.10  where valor_total= 500.75;
+update tbVendas set devolver_troco=25.00 where devolver_troco=30.00;
+update tbVendas set devolver_troco=10.50 where devolver_troco=10.00;
+update tbVendas set horaEntr='09:20:00'   where horaEntr='09:00:00';
+-- select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from tbUsuarios as usu inner join tbFuncionarios as func on usu.codFunc = func.codFunc where func.codFunc = 2;
+-- select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from 1tbUsuarios as usu inner join 2tbFuncionarios as func on usu.codFunc =  func.codFunc where func.nome like "%l%";
+-- select func.nome as "nome do funcionarios",usu.nome as "nome do Usuarios" from tbUsuarios as usu inner join tbFuncionarios as func on usu.codFunc = func.codFunc where func.nome not like "%l%";
+---select from tbProduto as Pro inner join tbVenda as vend on pro.codPro = vend.codPro inner join tbFornecedores as forn on Pro.codForn = forn.codForn;
+
+select Fun.nome , for.nome ,cli.nome from tbFuncionarios as func inner join tbFornecedores as forn inner join tbClientes as cli on func.codFunc = cli.codCli inner join  
+
 
 
 -- desc tbClientes;
@@ -270,10 +288,6 @@ update tbPagamentos set forma_pagamento='Dinheiro' where codpag=2;
 
 
 -- select * from tbVendas;
-
-
-
-
 -- select * from tbClientes;
 -- select * from tbFuncionarios;
 -- select * from tbFornecedores;
